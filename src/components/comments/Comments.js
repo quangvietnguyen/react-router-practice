@@ -32,7 +32,7 @@ const Comments = () => {
     comments = <div className='centered'><LoadingSpinner/></div>
   }
 
-  if (status === 'completed' && loadedComments && loadedComments.length > 0) {
+  if (status === 'completed' && (loadedComments && loadedComments.length > 0)) {
     comments = <CommentsList comments={loadedComments} />
   }
   
@@ -47,7 +47,7 @@ const Comments = () => {
           Add a Comment
         </button>
       )}
-      {isAddingComment && <NewCommentForm quoteId={quoteId} onAddedComment={addedCommentHandler} />}
+      {isAddingComment && <NewCommentForm quoteId={quoteId} onAddedComment={addedCommentHandler}/>}
       {comments}
     </section>
   );
